@@ -17,7 +17,7 @@ const expenseSchema = new Schema(
             enum: ["Food", "Transport", "Shopping", "Others"],
             required: true
         },
-        data: {
+        date: {
             type: Date,
             required: true
         }
