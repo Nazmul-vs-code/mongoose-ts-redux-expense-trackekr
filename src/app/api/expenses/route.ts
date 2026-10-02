@@ -22,3 +22,21 @@ export async function POST(request: Request) {
       { status: 500 })
     }
 }
+
+
+export async function GET(request:Request) {
+    try {
+        
+        const expenseData = await Expenses.find({});
+
+        return NextResponse.json(expenseData, {status: 200})
+
+
+    } catch (error) {
+        console.log("Error:", error);
+
+    return NextResponse.json(
+      { message: "Failed to create expense" },
+      { status: 500 })
+    }
+}
