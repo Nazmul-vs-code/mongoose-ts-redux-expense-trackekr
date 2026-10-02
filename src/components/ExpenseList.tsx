@@ -123,7 +123,7 @@ const ExpenseList = () => {
       <DeleteExpenseModal
         expense={showDeleteModal ? selectedExpense : null}
         onClose={closeDeleteModal}
-      />
+      /> 
     </>
   );
 };
