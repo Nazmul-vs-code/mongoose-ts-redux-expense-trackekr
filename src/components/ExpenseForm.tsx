@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { addExpense } from "@/redux/features/expenseSlice";
 import { createExpense } from "@/services/expenseApi";
+import toast from "react-hot-toast";
 
 const ExpenseForm = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -20,6 +21,7 @@ const ExpenseForm = () => {
     e.preventDefault();
 
     if (!title || !amount || !date) {
+      toast.error("Please fill in all fields");
       return;
     }
 
@@ -33,12 +35,20 @@ const ExpenseForm = () => {
 
       dispatch(addExpense(newExpense));
 
+      toast.success(
+        `Backend confirmed: "${newExpense.title}" added successfully! 🎉`
+      );
+
+      console.log("Backend response:", newExpense);
+
       setTitle("");
       setAmount("");
       setCategory("Food");
       setDate("");
     } catch (error) {
       console.error("Failed to create expense:", error);
+
+      toast.error("Failed to add expense");
     }
   };
 
