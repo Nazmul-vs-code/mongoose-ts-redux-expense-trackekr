@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="YOUR_LIVE_URL">
+  <a href="https://mongoose-ts-redux.vercel.app/">
     <img src="https://img.shields.io/badge/Live-Demo-6366F1?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/>
   </a>
   <a href="YOUR_GITHUB_URL">
